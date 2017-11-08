@@ -310,14 +310,14 @@ angular.module('ui.colorpicker')
     .provider('localize', function () {
 
         this.map = {
-            'zh-cn': {
+            'zh-CN': {
                 'default_color': '默认颜色',
                 'latest_used': '最近使用',
                 'theme_color': '主题颜色',
                 'standard_color': '标准颜色',
                 'more_color': '更多颜色..'
             },
-            'en-us': {
+            'en': {
                 'default_color': 'default',
                 'latest_used': 'latest used',
                 'theme_color': 'theme color',
@@ -326,7 +326,7 @@ angular.module('ui.colorpicker')
             }
         };
 
-        this.defaultLang = 'zh-cn';
+        this.defaultLang = window.DEFAULTLANG || localStorage['DEFAULTLANG'] || 'zh-CN';
 
         this.setDefaultLang = function (lang) {
             var supported = Object.keys(this.map);
